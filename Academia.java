@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Academia {
 
     //atributos privados
@@ -5,12 +8,18 @@ public class Academia {
         private String endereco;
         private String numero;
 
+    // classe alunos
+        List<Aluno> alunos;
+
     public Academia(String nome, String endereco, String numero ){
 
     //construtor
         this.nome = nome;
         this.endereco = endereco;
         this.numero = numero;
+
+    //inicializando a classe de aluno 
+        alunos = new ArrayList<>();
     }
 
     //get (mostra) e set (atribui)
@@ -38,7 +47,11 @@ public class Academia {
              this.numero = numero;
         }
 
-        public String toString(){
+        public List<Aluno> getAlunos () {
+            return alunos;
+        }
+
+        public String CtoString(){
             String texto;
     
             texto = "\n Nome da academia: "+nome;
@@ -47,4 +60,5 @@ public class Academia {
     
             return texto;
         }
+
 }
