@@ -24,9 +24,9 @@ public class Aluno extends Pessoa {
     public void setNivel(String nivel) {
         this.nivel = nivel;
     }
-
+    
     public String AtoString() throws ParseException {
-        return super.PtoString() + "\nNivel: "+nivel;
+        return super.toString() + "\nNivel: "+nivel;
     }
 
 }

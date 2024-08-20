@@ -106,14 +106,12 @@ public class Pessoa {
 
     public String PtoString() throws ParseException {
 
-        String dataNascimento = "";
-
-       
-       dataNascimento = converterDateToString(this.dataNascimento);
+       String dataNascimento = converterDateToString(this.dataNascimento);
+       int idade = calcularIdade(this.dataNascimento);
       
 
         return "\nNome: " + nome +
-               "\nIdade: " +dataNascimento+
+               "\nIdade: " +idade+
                "\nGenero: " +genero+
                "\nAltura:" +altura+ 
                "\nPeso: " + peso;

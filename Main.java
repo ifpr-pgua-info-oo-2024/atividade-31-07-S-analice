@@ -1,43 +1,58 @@
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
 
 public class Main {
 
     public static void main(String[] args) throws ParseException {
 
-    //instanciação
-       Academia c = new Academia("Academia das Super Poderosas", "Avenida céu rua anjos", "777");
-       Academia c2 = new Academia("Academia do Ursinho", "Avenida samba in paris", "999");
+      //instanciação
+         Academia c = new Academia("Academia das Super Poderosas", "Avenida céu rua anjos", "777");
+         Academia c2 = new Academia("Academia do Ursinho", "Avenida samba in paris", "999");
+         
+         Scanner teclado = new Scanner(System.in);
 
-       Aluno aluno1 = new Aluno("Analice", "médio", "20/03/2008");
-       Aluno aluno2 = new Aluno("Heloisa", "intermédiario", "17/03/2008");
-       Aluno aluno3 = new Aluno("Bruna", "médio", "30/04/2007");
+       //exibindo dados das academias 
+       System.out.println(c.CtoString());
+       System.out.println(c2.CtoString());
 
-       Aluno aluno4 = new Aluno("Lyza", "superior", "14/04/2007");
-       Aluno aluno5 = new Aluno("Loh", "médio", "04/10/2007");
-       Aluno aluno6 = new Aluno("Aninha", "médio", "20/08/2007");
-      
-       //cadastrando alunos
-       c.alunos.add(aluno1);
-       c.alunos.add(aluno2);
-       c.alunos.add(aluno3);
+       //academia 01
+       System.out.println("\nDigite os dados do aluno para a "+c.getNome()+ ":");
 
-       c2.alunos.add(aluno4);
-       c2.alunos.add(aluno5);
-       c2.alunos.add(aluno6);
+       System.out.println("Digite o nome: ");
+       String nome = teclado.nextLine();
 
-      //immprimindo o estado dos dados
-         System.out.println(c.CtoString());
-         System.out.println(c2.CtoString());
+       System.out.println("Digite o nivel: ");
+       String nivel = teclado.nextLine();
 
-         c.setNome ("Academia do Dean");
-         c.setEndereco ("Rua do castiel");
-         c.setNumero  ("111");
+       System.out.println("Digite a data de nascimento: ");
+       String dataNascimento = teclado.nextLine();
 
-         c2.setNome ("Academia do Sam");
-         c2.setEndereco ("Rua da ruby");
-         c2.setNumero ("666");
+       Aluno aluno1 = new Aluno(nome, nivel, dataNascimento);
+       c.getAlunos().add(aluno1);
 
-      //imprimindo o estado dos dados alterados e os alunos  
+
+       //academia 02
+       System.out.println("\nDigite os dados do aluno para a  "+c2.getNome()+ ":");
+
+       System.out.println("Digite o nome: ");
+       String nome2 = teclado.nextLine();
+
+       System.out.println("Digite o nivel: ");
+       String nivel2 = teclado.nextLine();
+
+       System.out.println("Digite a data de nascimento: ");
+       String dataNascimento2 = teclado.nextLine();
+
+       Aluno aluno2 = new Aluno(nome2, nivel2, dataNascimento2);
+       c2.getAlunos().add(aluno2);
+
+
+      //imprimindo o estado dos dados e os alunos  
          System.out.println(c.CtoString());
          for (Aluno aluno : c.getAlunos()) {
             System.out.println(aluno.AtoString());

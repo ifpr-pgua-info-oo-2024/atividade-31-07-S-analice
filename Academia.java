@@ -19,7 +19,7 @@ public class Academia {
         this.numero = numero;
 
     //inicializando a classe de aluno 
-        alunos = new ArrayList<>();
+        this.alunos = new ArrayList<>();
     }
 
     //get (mostra) e set (atribui)
